@@ -3,10 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>맥도날드 반응형</title>
     <link rel="stylesheet" href="./style.css">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/522c2b7a73.js" crossorigin="anonymous"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
 </head>
 <body>
+    
     <div class="wrapper">
         <header>
             <h1 class="logo">
@@ -15,75 +31,81 @@
                 </a>
             </h1>
 
-            <ul class="gnb-list">
+            <div class="sidebar-open-btn sm-only">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <ul class="gnb-list sm-hidden">
                 <li><a href="">menu1</a></li>
                 <li><a href="">menu2</a></li>
                 <li><a href="">menu3</a></li>
                 <li class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></li>
             </ul>
         </header>
+
         <div class="lnb">
-            <ul class="">
+            <ul class="lnb-list">
                 <li><a href="">Menu</a></li>
                 <li><a href="">Store</a></li>
-                <li><a href="">What's</a></li>
+                <li><a href="">What's News</a></li>
                 <li><a href="">Story</a></li>
             </ul>
         </div>
-        <div>
-            <section class="back-img"></section>
+
+        <main>   
+            <section class="back-img"></section>     
             <section class="menu">
                     <ul class="memu-list">
-                        <li>
+                        <li class="menu-item">
                             <a href="">
                                 <img src="./assets/images/burger1.png" alt="burger1">
-                                <h2>Lorem ipsum dolor sit.</h2>
+                                <h2>맥스파이시 상하이 버거</h2>
                                 <p>Lorem, ipsum dolor.</p>
                             </a>
                         </li>
-                        <li>
+                        <li class="menu-item">
                             <a href="">
                                 <img src="./assets/images/burger2.png" alt="burger2">
                                 <h2>Lorem ipsum dolor sit.</h2>
                                 <p>Lorem, ipsum dolor.</p>
                             </a>
                         </li>
-                        <li>
+                        <li class="menu-item">
                             <a href="">
                                 <img src="./assets/images/burger3.png" alt="burger3">
                                 <h2>Lorem ipsum dolor sit.</h2>
                                 <p>Lorem, ipsum dolor.</p>
                             </a>
                         </li>
-                        <li>
+                        <li class="menu-item">
                             <a href="">
                                 <img src="./assets/images/burger4.png" alt="burger4">
                                 <h2>Lorem ipsum dolor sit.</h2>
                                 <p>Lorem, ipsum dolor.</p>
                             </a>
                         </li>
-                        <li>
+                        <li class="menu-item">
                             <a href="">
                                 <img src="./assets/images/burger5.png" alt="burger5">
                                 <h2>Lorem ipsum dolor sit.</h2>
                                 <p>Lorem, ipsum dolor.</p>
                             </a>
                         </li>
-                        <li>
+                        <li class="menu-item">
                             <a href="">
                                 <img src="./assets/images/burger6.png" alt="burger6">
                                 <h2>Lorem ipsum dolor sit.</h2>
                                 <p>Lorem, ipsum dolor.</p>
                             </a>
                         </li>
-                        <li>
+                        <li class="menu-item">
                             <a href="">
                                 <img src="./assets/images/burger7.png" alt="burger7">
                                 <h2>Lorem ipsum dolor sit.</h2>
                                 <p>Lorem, ipsum dolor.</p>
                             </a>
                         </li>
-                        <li>
+                        <li class="menu-item">
                             <a href="">
                                 <img src="./assets/images/burger8.png" alt="burger8">
                                 <h2>Lorem ipsum dolor sit.</h2>
@@ -94,31 +116,92 @@
                 
             </section>
 
-            <section class=""mac-story>
+            <section class="mac-story">
                 <ul class="mac-story-list">
                     <li>
                         <a href="">
                             <img src="./assets/images/side1.png" alt="story">
-                            <p>ddddd</p>
+                            <p>품질 이야기</p>
                         </a>
                     </li>
                     <li>
                         <a href="">
                             <img src="./assets/images/side2.jpeg" alt="story">
-                            <p>ddddd</p>
+                            <p>McDilivery</p>
                         </a>
                     </li>
                     <li>
                         <a href="">
                             <img src="./assets/images/top.jpeg" alt="story">
-                            <p>ddddd</p>
+                            <p>TOP</p>
                         </a>
                     </li>
 
                 </ul>
             </section>
+        </main>
+
+        <footer>
+            <ul class="footer-1">
+                <li class="txt-yellow"><a href="">개인정보 처리방침</a></li>
+                <li><a href="">위치정보 이용약관</a></li>
+                <li><a href="">사이트맵</a></li>
+                <li><a href="">임차문의</a></li>
+            </ul>
+
+            <ul class="footer-info">
+                <li>한국맥도날드(유)</li>
+                <li>대표이사: 이예진</li>
+                <li>사업자등록번호: 101-081-26409</li>
+                <li>전화주문: 1600-5252</li>
+            </ul>
+            
+            <ul class="footer-link">
+                <li>
+                    <a href="">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <i class="fa-regular fa-handshake"></i>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+
+        <div class="search">
+            
+            <div>
+                <input type="text" placeholder="메뉴 또는 매장 정보를 검색하실 수 있습니다.">
+                <button type="button">검색하기</button>
+                <div class="search-close-btn">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>            
+            </div>
         </div>
+        
+        <aside class="sidebar">
+            <ul class="gnb-list sm-hidden">
+                <li><a href="">menu1</a></li>
+                <li><a href="">menu2</a></li>
+                <li><a href="">menu3</a></li>
+            </ul>
+        </aside>
+
+        <div class="overlay"></div>
     </div>
     <script src="./script.js"></script>
+    <script src="https://kit.fontawesome.com/bfb9aca435.js" crossorigin="anonymous"></script>
 </body>
 </html>
