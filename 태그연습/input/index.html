@@ -10,35 +10,19 @@
 <body>
     <div class="wrapper">
         <h1>회원가입</h1>
-        <p>회원가입 페이지 입니다.</p>
-        <!-- <table border="1">
-            <tr>
-                <th>이름</th>
-                <td>이슬</td>
-            </tr>
-            <tr>
-                <th>생별</th>
-                <td>여성</td>
-            </tr>
-            <tr>
-                <th>나이</th>
-                <td>27</td>
-            </tr>
-            <tr>
-                <th>휴대폰번호</th>
-                <td>010-****-****</td>
-            </tr>
-        </table> -->
-
+        <p>회원가입 페이지 입니다. 본사는 고객님들의 개인정보를 소중하고 안전하게 보관하고 있습니다.
+        <br/>불편사항이 있으시면 042-1234-1234로 연락주시기 바랍니다.</p>
+        <hr/>
         <!-- action: 데이터가 전송될 서버 URL -->
         <!-- method: 데이터를 전송하는 방식(HTTP 메소드)을 지정-->
         <!-- 값이 비어있을 때 기본값: GET-->
-        <form action="./action.html" mehod="GET">
+        <form action="./action.html" mehod="GET" class="form">
             <table>
                 <tr>
-                    <td>아이디</td>
+                    <td class="id">아이디</td>
                     <td>
                         <input type="id">
+                        <button type="button" class="id-check">아이디 중복체크</button>
                     </td>
                 </tr>
                 <tr>
@@ -46,38 +30,85 @@
                     <td><input type="password"></td>
                 </tr>
                 <tr>
+                    <td>이름</td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>이메일</td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>국적</td>
+                    <td><select  class="country" name="" id=""></select></td>
+                </tr>
+                <tr>
                     <td>생년월일</td>
                     <td>
                         <select class="year" name="" id="">
-                        </select>
+                            
+                        </select>년
                         <select class="month" name="" id="">
-                        </select>
+                        </select>월
                         <select class="day" name="" id="">
-                            <option value="">1일</option>
-                        </select>
+                        </select>일
                     </td>
                 </tr>
                 <tr>
                     <td>성별</td>
                     <td>
-                        <input type="checkbox" id="woman" name="woman"><label for="woman">여성</label>
-                        <input type="checkbox" id="man" name="man"><label for="man">남성</label>
+                        <input type="radio" id="woman" name="gender"><label for="woman">여성</label>
+                        <input type="radio" id="man" name="gender"><label for="man">남성</label>
                     </td>
                 </tr>
                 <tr>
-                    <td>컬러</td>
-                    <td><input type="color"></td>
+                    <td>전화번호</td>
+                    <td>
+                        <select class="phone" name="" id=""></select>
+                        - <input type="text">
+                        - <input type="text">
+                    </td>
                 </tr>
                 <tr>
-                    <td>파일</td>
+                    <td>희망연봉</td>
+                    <td><input type="range" step="10"></td>
+                </tr>
+                <tr>
+                    <td>취미</td>
+                    <td>
+                        <input type="checkbox">양궁
+                        <input type="checkbox">등산
+                        <input type="checkbox">영화감상
+                        <input type="checkbox">음악감상
+                        <input type="checkbox">독서
+                        <input type="checkbox">다도
+                        <input type="checkbox">수영
+                        <input type="checkbox">낚시
+                        <input type="checkbox">농구
+                        <input type="checkbox">야구
+                        <input type="checkbox">축구
+                        <input type="checkbox">악기
+                        <input type="checkbox">캘리그라피
+                        <input type="checkbox">바둑
+                    </td>
+                </tr>
+                <tr>
+                    <td>증명사진</td>
                     <td><input type="file"></td>
                 </tr>
+                <!-- <tr>
+                    <td>컬러</td>
+                    <td><input type="color"></td>
+                </tr> -->
+                <tr>
+                    <td>자기소개서</td>
+                    <td><textarea name="" id=""></textarea></td>
+                </tr>
                 <tr>
                     <td>
-                        <input type="reset">
+                        <input type="submit">
                     </td>
                     <td>
-                        <input type="submit">
+                        <input type="reset">
                     </td>
                 </tr>
             </table>
