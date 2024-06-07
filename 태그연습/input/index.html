@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js" integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>회원가입</h1>
+        <p>회원가입 페이지 입니다.</p>
+        <!-- <table border="1">
+            <tr>
+                <th>이름</th>
+                <td>이슬</td>
+            </tr>
+            <tr>
+                <th>생별</th>
+                <td>여성</td>
+            </tr>
+            <tr>
+                <th>나이</th>
+                <td>27</td>
+            </tr>
+            <tr>
+                <th>휴대폰번호</th>
+                <td>010-****-****</td>
+            </tr>
+        </table> -->
+
+        <!-- action: 데이터가 전송될 서버 URL -->
+        <!-- method: 데이터를 전송하는 방식(HTTP 메소드)을 지정-->
+        <!-- 값이 비어있을 때 기본값: GET-->
+        <form action="./action.html" mehod="GET">
+            <table>
+                <tr>
+                    <td>아이디</td>
+                    <td>
+                        <input type="id">
+                    </td>
+                </tr>
+                <tr>
+                    <td>비밀번호</td>
+                    <td><input type="password"></td>
+                </tr>
+                <tr>
+                    <td>생년월일</td>
+                    <td>
+                        <select class="year" name="" id="">
+                        </select>
+                        <select class="month" name="" id="">
+                        </select>
+                        <select class="day" name="" id="">
+                            <option value="">1일</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>성별</td>
+                    <td>
+                        <input type="checkbox" id="woman" name="woman"><label for="woman">여성</label>
+                        <input type="checkbox" id="man" name="man"><label for="man">남성</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>컬러</td>
+                    <td><input type="color"></td>
+                </tr>
+                <tr>
+                    <td>파일</td>
+                    <td><input type="file"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="reset">
+                    </td>
+                    <td>
+                        <input type="submit">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
