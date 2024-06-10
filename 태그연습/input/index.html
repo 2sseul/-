@@ -9,25 +9,38 @@
 </head>
 <body>
     <div class="wrapper">
-        <h1>회원가입</h1>
-        <p>회원가입 페이지 입니다. 본사는 고객님들의 개인정보를 소중하고 안전하게 보관하고 있습니다.
-        <br/>불편사항이 있으시면 042-1234-1234로 연락주시기 바랍니다.</p>
-        <hr/>
+        <div class="join-txt">
+            <h1>회원가입</h1>
+            <p>회원가입 페이지 입니다. 본사는 고객님들의 개인정보를 소중하고 안전하게 보관하고 있습니다.
+            <br/>불편사항이 있으시면 042-1234-1234로 연락주시기 바랍니다.</p>
+        </div>
         <!-- action: 데이터가 전송될 서버 URL -->
         <!-- method: 데이터를 전송하는 방식(HTTP 메소드)을 지정-->
         <!-- 값이 비어있을 때 기본값: GET-->
         <form action="./action.html" mehod="GET" class="form">
             <table>
                 <tr>
-                    <td class="id">아이디</td>
+                    <td>아이디</td>
                     <td>
-                        <input type="id">
-                        <button type="button" class="id-check">아이디 중복체크</button>
+                        <input type="id" id="id" placeholder="id를 입력하세요." onchange="getId()">
+                        <button type="button" class="id-check">중복체크</button>
                     </td>
                 </tr>
                 <tr>
+                    <td></td>
+                    <td class="id-alert">
+                        아이디는 4글자 이상 12글자 이하의 영어, 숫자 조합만 가능합니다
+                    </td>
+                    <td class="id-ok">사용할 수 있는 아이디입니다.</td>
+                </tr>
+                <tr>
                     <td>비밀번호</td>
-                    <td><input type="password"></td>
+                    <td><input type="password" id="password" onchange="getPwd()"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td class="pwd-alert">비밀번호는 8글자 이상의 영어, 숫자, 특수문자(@$!%*#?&)의 조합만 가능합니다.</td>
+                    <td class="pwd-ok">사용할 수 있는 비밀번호입니다.</td>
                 </tr>
                 <tr>
                     <td>이름</td>
@@ -64,8 +77,8 @@
                     <td>전화번호</td>
                     <td>
                         <select class="phone" name="" id=""></select>
-                        - <input type="text">
-                        - <input type="text">
+                        - <input type="text" id="phone1" maxlength="4" onchange="getPhone()">
+                        - <input type="text" id="phone2" maxlength="4" onChange="getPhone()">
                     </td>
                 </tr>
                 <tr>
@@ -82,6 +95,7 @@
                         <input type="checkbox">독서
                         <input type="checkbox">다도
                         <input type="checkbox">수영
+                        <br/>
                         <input type="checkbox">낚시
                         <input type="checkbox">농구
                         <input type="checkbox">야구
