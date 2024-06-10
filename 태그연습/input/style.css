@@ -8,40 +8,12 @@
     border-bottom: 2px solid black;
 }
 
-.id-alert-view{
+.txt-red{
     color: red;
 }
 
-.id-ok-view{
+.txt-green{
     color: green;
-}
-
-.id-alert{
-    color: red;
-    display: none;
-}
-
-.id-ok{
-    color: green;
-    display: none;
-}
-
-.pwd-alert-view{
-    color: red;
-}
-
-.pwd-ok-view{
-    color: green;
-}
-
-.pwd-alert{
-    color: red;
-    display: none;
-}
-
-.pwd-ok{
-    color: green;
-    display: none;
 }
 
 #phone1, #phone2{

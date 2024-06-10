@@ -1,55 +1,49 @@
+//복합대입연산자
+let idVeri = pwVeri = pwChkVeri = false;
+
+
 //id 정규성 검사
 
-let idCheckAlert = document.querySelector('.id-alert');
-let idCheckOk = document.querySelector('.id-ok');
-    
-function getId() {
-    let id = document.getElementById('id').value;
-    if(id.length == 0){
-        idCheckAlert.classList.remove('id-alert-view');
-        idCheckAlert.classList.add('id-alert');
-        idCheckOk.classList.remove('id-ok-view');
-        idCheckOk.classList.add('id-ok');        
+let idAlert = document.querySelector('.id-alert');
+let id = document.getElementById('id');
+
+id.addEventListener('focusout', function(){
+    if(id.value.length >= 8 && /^[A-Za-z0-9][A-Za-z0-9]*$/.test(id.value)){
+        idAlert.innerHTML = `<span class="txt-green">사용할 수 있는 아이디입니다.</span>`;
+        idVeri = true;
     }else{
-        if(id.length >= 4 && id.length <= 12 && /^[A-Za-z0-9][A-Za-z0-9]*$/.test(id)){
-            idCheckAlert.classList.remove('id-alert-view');
-            idCheckAlert.classList.add('id-alert');
-            idCheckOk.classList.add('id-ok-view');
-            idCheckOk.classList.remove('id-ok');
-        }else{
-            idCheckOk.classList.remove('id-ok-view');
-            idCheckOk.classList.add('id-ok');
-            idCheckAlert.classList.add('id-alert-view');
-            idCheckAlert.classList.remove('id-alert');
-        }
+        idAlert.innerHTML = `<span class="txt-red">아이디는 8글자 이상 영어와 숫자의 조합만 가능합니다.</span>`;
+        idVeri = false;
     }
-}
+})
 
 //비밀번호 정규성 검사
-let pwdCheckAlert = document.querySelector('.pwd-alert');
-let pwdCheckOk = document.querySelector('.pwd-ok');
+let pwdAlert = document.querySelector('.pwd-alert');
+let pwd = document.getElementById('password');
 
-function getPwd(){
-    let pwd = document.getElementById('password').value;
-    if(pwd.length == 0){
-        pwdCheckAlert.classList.remove('pwd-alert-view');
-        pwdCheckAlert.classList.add('pwd-alert');
-        pwdCheckOk.classList.remove('pwd-ok-view');
-        pwdCheckOk.classList.add('pwd-ok');
+pwd.addEventListener('focusout', function(){
+    if(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(pwd.value)){
+        pwdAlert.innerHTML = `<span class="txt-green">사용할 수 있는 비밀번호입니다.</span>`;
+        pwVeri = true;
     }else{
-        if(/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(pwd)){
-            pwdCheckAlert.classList.remove('pwd-alert-view');
-            pwdCheckAlert.classList.add('pwd-alert');
-            pwdCheckOk.classList.add('pwd-ok-view');
-            pwdCheckOk.classList.remove('pwd-ok');
-        }else{
-            pwdCheckOk.classList.remove('pwd-ok-view');
-            pwdCheckOk.classList.add('pwd-ok');
-            pwdCheckAlert.classList.add('pwd-alert-view');
-            pwdCheckAlert.classList.remove('pwd-alert');
-        }
+        pwdAlert.innerHTML = `<span class="txt-red">비밀번호는 8글자 이상의 영어, 숫자, 특수문자(@$!%*#?&)의 조합만 가능합니다.</span>`;
+        pwVeri = false;
     }
-}
+})
+
+let pwdCheckAlert = document.querySelector('.pwd-check-alert');
+let pwdCheck = document.getElementById('password-check');
+
+pwdCheck.addEventListener('focusout', function(){
+    if(pwd.value == pwdCheck.value){
+        pwdCheckAlert.innerHTML = `<span class="txt-green">비밀번호가 일치합니다.</span>`;
+        pwChkVeri = true;
+    }else{
+        pwdCheckAlert.innerHTML = `<span class="txt-red">비밀번호가 일치하지 않습니다.</span>`;
+        pwChkVeri = false;
+    }
+})
+
 
 //한국 표준시
 let kst = new Date();
@@ -110,3 +104,27 @@ function getPhone(){
     let phone2 = document.getElementById('phone2').vlaue;
 
 }
+
+let checkboxs = document.querySelectorAll('input[type="checkbox"][name="hobby"]');
+checkboxs.forEach((item)=>{
+    item.addEventListener('change', () => {
+        let checkCount = document.querySelectorAll('input[type="checkbox"][name="hobby"]:checked').length;
+        console.log(checkCount);
+        if(checkCount > 5){
+            alert("5개까지 체크할 수 있습니다!");
+            item.checked = false;
+        }
+    })
+})
+
+let submitBtn = document.getElementById('submit-btn');
+let joinForm = document.getElementById('join-form');
+submitBtn.addEventListener('click', (e)=>{
+    if(idVeri && pwdVeri && pwChkVeri){
+        joinForm.submit();
+    }else{
+        //기본 속성 제거 (제출할 수 없게 해줌)
+        e.preventDefault();
+        alert("제출할 수 없습니다. 확인해주세요.");
+    }
+})

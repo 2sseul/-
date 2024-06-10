@@ -22,25 +22,19 @@
                 <tr>
                     <td>아이디</td>
                     <td>
-                        <input type="id" id="id" placeholder="id를 입력하세요." onchange="getId()">
+                        <input type="id" id="id" placeholder="id를 입력하세요.">
                         <button type="button" class="id-check">중복체크</button>
+                        <p class="id-alert"></p>
                     </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td class="id-alert">
-                        아이디는 4글자 이상 12글자 이하의 영어, 숫자 조합만 가능합니다
-                    </td>
-                    <td class="id-ok">사용할 수 있는 아이디입니다.</td>
                 </tr>
                 <tr>
                     <td>비밀번호</td>
-                    <td><input type="password" id="password" onchange="getPwd()"></td>
+                    <td><input type="password" id="password"><p class="pwd-alert"></p></td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td class="pwd-alert">비밀번호는 8글자 이상의 영어, 숫자, 특수문자(@$!%*#?&)의 조합만 가능합니다.</td>
-                    <td class="pwd-ok">사용할 수 있는 비밀번호입니다.</td>
+                    <td>비밀번호 확인</td>
+                    <td><input type="password" id="password-check">
+                    <p class="pwd-check-alert"></p></td>
                 </tr>
                 <tr>
                     <td>이름</td>
@@ -58,7 +52,6 @@
                     <td>생년월일</td>
                     <td>
                         <select class="year" name="" id="">
-                            
                         </select>년
                         <select class="month" name="" id="">
                         </select>월
@@ -88,21 +81,22 @@
                 <tr>
                     <td>취미</td>
                     <td>
-                        <input type="checkbox">양궁
-                        <input type="checkbox">등산
-                        <input type="checkbox">영화감상
-                        <input type="checkbox">음악감상
-                        <input type="checkbox">독서
-                        <input type="checkbox">다도
-                        <input type="checkbox">수영
+                        <input type="checkbox" name="hobby" value="양궁" >양궁
+                        <input type="checkbox" name="hobby" value="등산">등산
+                        <input type="checkbox" name="hobby" value="영화감상">영화감상
+                        <input type="checkbox" name="hobby"
+                        value="음악감상">음악감상
+                        <input type="checkbox" name="hobby" value="독서">독서
+                        <input type="checkbox" name="hobby" value="다도">다도
+                        <input type="checkbox" name="hobby" value="수영">수영
                         <br/>
-                        <input type="checkbox">낚시
-                        <input type="checkbox">농구
-                        <input type="checkbox">야구
-                        <input type="checkbox">축구
-                        <input type="checkbox">악기
-                        <input type="checkbox">캘리그라피
-                        <input type="checkbox">바둑
+                        <input type="checkbox" name="hobby" value="낚시">낚시
+                        <input type="checkbox" name="hobby" value="농구">농구
+                        <input type="checkbox" name="hobby" value="야구">야구
+                        <input type="checkbox" name="hobby" value="축구">축구
+                        <input type="checkbox" name="hobby" value="악기">악기
+                        <input type="checkbox" name="hobby" value="캘리그라피">캘리그라피
+                        <input type="checkbox" name="hobby" value="바둑">바둑
                     </td>
                 </tr>
                 <tr>
@@ -119,7 +113,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <input type="submit">
+                        <input type="submit" id="submit-btn">
                     </td>
                     <td>
                         <input type="reset">
